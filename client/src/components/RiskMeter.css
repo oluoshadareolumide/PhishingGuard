@@ -1,0 +1,33 @@
+.risk-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+.rm-bar-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.rm-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width .8s cubic-bezier(.4,0,.2,1);
+}
+.rm-labels {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.rm-score {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+.rm-max {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+}

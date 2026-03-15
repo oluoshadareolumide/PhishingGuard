@@ -1,0 +1,151 @@
+.learn { display:flex; flex-direction:column; gap:48px }
+
+/* Header */
+.learn-head { text-align:center }
+.eyebrow {
+  display:inline-block;
+  font-size:10px; letter-spacing:.18em;
+  color:var(--amber); margin-bottom:10px;
+}
+.learn-title {
+  font-family:var(--mono);
+  font-size:clamp(28px,5vw,44px);
+  font-weight:700; color:var(--text);
+  letter-spacing:-.02em; margin-bottom:10px;
+}
+.learn-sub { font-size:15px; color:var(--text-2); max-width:480px; margin:0 auto; line-height:1.7 }
+
+/* ── Threat browser ── */
+.threat-browser {
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  gap:3px;
+  background:var(--border);
+  border:1px solid var(--border);
+}
+
+/* Sidebar */
+.threat-nav {
+  background:var(--surface);
+  display:flex; flex-direction:column;
+  padding:8px;
+  gap:2px;
+}
+.threat-nav-btn {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px;
+  border:none; background:transparent;
+  color:var(--text-2); cursor:pointer;
+  border-radius:var(--r); text-align:left;
+  transition:all var(--ease);
+}
+.threat-nav-btn:hover { background:var(--raised); color:var(--text) }
+.threat-nav-btn--on { background:var(--amber-dim); color:var(--amber) }
+.tnb-icon { font-size:18px; flex-shrink:0 }
+.tnb-label { font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.04em }
+
+/* Detail */
+.threat-detail {
+  background:var(--card);
+  padding:32px;
+  animation:fadeUp .3s ease both;
+}
+.td-icon { font-size:36px; margin-bottom:14px; filter:drop-shadow(0 0 10px var(--amber-glow)) }
+.td-title {
+  font-family:var(--mono);
+  font-size:22px; font-weight:700;
+  color:var(--text); margin-bottom:10px;
+}
+.td-summary {
+  font-size:14px; color:var(--text-2);
+  line-height:1.7; margin-bottom:24px;
+  max-width:560px;
+}
+.td-tips-head {
+  font-size:10px; letter-spacing:.14em;
+  color:var(--amber); margin-bottom:14px;
+}
+.td-tips { list-style:none; display:flex; flex-direction:column; gap:10px }
+.td-tip {
+  display:flex; align-items:flex-start; gap:14px;
+  font-size:13.5px; color:var(--text-2); line-height:1.6;
+}
+.tip-num {
+  font-size:10px; color:var(--amber);
+  background:var(--amber-dim);
+  padding:2px 6px; border-radius:2px; flex-shrink:0; margin-top:2px;
+}
+
+/* ── Q&A ── */
+.qa-section {
+  border:1px solid var(--border);
+  background:var(--card);
+  padding:32px;
+  display:flex; flex-direction:column; gap:20px;
+}
+.qa-head { }
+.qa-title {
+  font-family:var(--mono);
+  font-size:clamp(18px,3vw,26px);
+  font-weight:700; color:var(--text); margin-top:6px;
+}
+
+/* Quick questions */
+.qa-quick { display:flex; flex-wrap:wrap; gap:6px }
+.quick-btn {
+  font-size:12px; padding:6px 13px;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text-2); cursor:pointer;
+  border-radius:20px; transition:all var(--ease);
+}
+.quick-btn:hover { color:var(--amber); border-color:rgba(255,179,71,.35); background:var(--amber-dim) }
+
+/* Input row */
+.qa-input-row { display:flex; gap:8px }
+.qa-input {
+  flex:1; padding:12px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); font-family:var(--sans); font-size:14px;
+  border-radius:var(--r); transition:border-color var(--ease);
+}
+.qa-input::placeholder { color:var(--text-3) }
+.qa-input:focus { border-color:rgba(255,179,71,.3); outline:none }
+.qa-btn {
+  padding:0 18px; min-width:46px;
+  background:var(--amber); color:#000;
+  border:none; font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:var(--r);
+  display:flex; align-items:center; justify-content:center;
+  transition:all var(--ease);
+}
+.qa-btn:hover:not(:disabled) { background:#fff; box-shadow:0 0 20px var(--amber-glow) }
+.qa-btn:disabled { opacity:.3; cursor:not-allowed }
+.qa-btn--busy { opacity:.7 }
+.spinner-sm {
+  width:14px; height:14px;
+  border:2px solid rgba(0,0,0,.25);
+  border-top-color:#000;
+  border-radius:50%;
+  animation:spin .65s linear infinite;
+}
+.qa-error { font-size:13px; color:var(--critical) }
+
+/* Answer */
+.qa-answer {
+  border-top:1px solid var(--border);
+  padding-top:20px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.qa-label {
+  font-size:10px; letter-spacing:.14em; color:var(--amber);
+}
+.qa-text { display:flex; flex-direction:column; gap:8px }
+.qa-text p { font-size:14px; color:var(--text-2); line-height:1.8 }
+
+@media(max-width:600px){
+  .threat-browser { grid-template-columns:1fr }
+  .threat-nav { flex-direction:row; flex-wrap:wrap; overflow-x:auto }
+  .threat-nav-btn { flex-direction:column; gap:4px; padding:8px 10px; text-align:center }
+  .tnb-label { font-size:9px }
+}

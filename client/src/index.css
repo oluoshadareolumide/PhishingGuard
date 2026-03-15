@@ -1,0 +1,80 @@
+/* ════════════════════════════════
+   PhishGuard — Global Styles
+   Aesthetic: Amber Terminal / NOC
+════════════════════════════════ */
+:root {
+  --void:       #07060a;
+  --surface:    #0d0c12;
+  --raised:     #121019;
+  --card:       #15131d;
+  --hover:      #1a1825;
+  --border:     #1f1c2e;
+  --border-hi:  #2c2840;
+
+  --text:       #ede8f5;
+  --text-2:     #8b86a8;
+  --text-3:     #46425e;
+  --mono-text:  #c8c2de;
+
+  --amber:      #ffb347;
+  --amber-dim:  rgba(255,179,71,.10);
+  --amber-glow: rgba(255,179,71,.30);
+  --amber-hi:   #ffd080;
+
+  --safe:       #3dffa0;
+  --safe-bg:    rgba(61,255,160,.08);
+  --low:        #a8ff47;
+  --low-bg:     rgba(168,255,71,.08);
+  --medium:     #ffdd47;
+  --medium-bg:  rgba(255,221,71,.08);
+  --high:       #ff8c47;
+  --high-bg:    rgba(255,140,71,.10);
+  --critical:   #ff3d6b;
+  --critical-bg:rgba(255,61,107,.10);
+
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Sora', system-ui, sans-serif;
+  --r: 3px;
+  --r-lg: 8px;
+  --ease: .16s ease;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body {
+  font-family: var(--sans);
+  background: var(--void);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Subtle grid */
+  background-image:
+    linear-gradient(rgba(255,179,71,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,179,71,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--void)}
+::-webkit-scrollbar-thumb{background:var(--border-hi);border-radius:3px}
+::selection{background:var(--amber-dim);color:var(--amber)}
+:focus-visible{outline:1.5px solid var(--amber);outline-offset:3px}
+
+a{color:var(--amber);text-decoration:none;transition:opacity var(--ease)}
+a:hover{opacity:.75}
+
+/* ── Animations ── */
+@keyframes fadeUp   {from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin     {to{transform:rotate(360deg)}}
+@keyframes glow-pulse {
+  0%,100%{box-shadow:0 0 0 0 var(--amber-glow)}
+  50%    {box-shadow:0 0 0 8px transparent}
+}
+@keyframes scanline {
+  0%  {transform:translateY(-100%)}
+  100%{transform:translateY(100vh)}
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.fade-up{animation:fadeUp .4s ease forwards}
